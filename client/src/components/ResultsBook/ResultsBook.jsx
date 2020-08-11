@@ -10,7 +10,7 @@ const ResultsBook = (props) => {
               <i className="fa fa-eye" aria-hidden="true"></i>
             </a>
             <button
-              className="right btn btn-dark"
+              className="right btn btn-dark saveBtn"
               id={props.id}
               onClick={() =>
                 props.saveBook(

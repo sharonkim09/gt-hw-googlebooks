@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./style.css";
 const NavBar = () => {
   return (
     <div className="navbar-fixed">
-      <nav className="black">
+      <nav className="red">
         <div className="container">
           <div className="nav-wrapper">
             <ul className="d-flex justify-content-center col-6">
