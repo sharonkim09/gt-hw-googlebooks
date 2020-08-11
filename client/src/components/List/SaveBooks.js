@@ -7,13 +7,13 @@ const SaveBooks = (props) => {
         <div className="row">
           <div className="col l12 s12">
             <div className="buttons">
-              <a className="btn right"href={props.link}><i className="fa fa-eye " aria-hidden="true"></i></a>
+              <a className="btn right" target="_blank" href={props.link}><i className="fa fa-eye " aria-hidden="true"></i></a>
               {props.button ? (
                 <button
                   onClick={() =>
                     props.onClick(
                       props.title,
-                      props.authors,
+                      props.author,
                       props.description,
                       props.thumbnail,
                       props.link
@@ -34,7 +34,7 @@ const SaveBooks = (props) => {
                 </button>
               )}
               <h3>{props.title}</h3>
-              <h5>Written by: {props.authors}</h5>
+              <h5>Written by: {props.author}</h5>
               <div className="card-image">
                 <img
                   alt="book"

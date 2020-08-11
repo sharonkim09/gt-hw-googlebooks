@@ -31,7 +31,7 @@ class Saved extends Component {
               id={book._id}
               link={book.link}
               title={book.title}
-              authors={book.author}
+              author={book.author}
               description={book.description}
               thumbnail={book.thumbnail}
               onClick={this.deleteBook}

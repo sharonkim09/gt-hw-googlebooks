@@ -6,7 +6,7 @@ const ResultsBook = (props) => {
       <div className="card">
         <div className="row">
           <div className="col l12 s12">
-            <a className="right btn" href={props.link}id="viewBtn">
+            <a className="right btn" target="_blank" href={props.link} id="viewBtn">
               <i className="fa fa-eye" aria-hidden="true"></i>
             </a>
             <button
@@ -15,9 +15,9 @@ const ResultsBook = (props) => {
               onClick={() =>
                 props.saveBook(
                   props.title,
-                  props.authors,
+                  props.author,
                   props.description,
-                  props.image,
+                  props.thumbnail,
                   props.link
                 )
               }
