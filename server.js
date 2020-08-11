@@ -26,8 +26,10 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-
-
+app.use(routes);
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 // db connection
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/gt-hw-googlebooks", {
