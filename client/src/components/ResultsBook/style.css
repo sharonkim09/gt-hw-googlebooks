@@ -1,7 +1,7 @@
 #resultsContainer{
     margin-top: 60px;
 }
-#saveBtn{
+.saveBtn{
     margin-right:10px;
     background-color:#d8377e;
 }

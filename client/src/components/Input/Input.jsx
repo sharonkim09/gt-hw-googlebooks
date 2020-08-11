@@ -12,12 +12,12 @@ const Input = (props) => {
           value={props.search}
           onChange={props.handleInputChange}
           id="inputEl" />
-          <button 
+          <span><button 
           className="btn btn-dark right"
           id="searchbtn"
           onClick={props.handleFormSubmit}>
             Search
-            </button>
+            </button></span>
         </form>
       </div>
     </>

@@ -5,7 +5,7 @@ const SaveBooks = (props) => {
     <div id="savedBooksContainer">
       <div className="card">
         <div className="row">
-          <div className="col l12">
+          <div className="col l12 s12">
             <div className="buttons">
               <a className="btn right"href={props.link}><i className="fa fa-eye " aria-hidden="true"></i></a>
               {props.button ? (
