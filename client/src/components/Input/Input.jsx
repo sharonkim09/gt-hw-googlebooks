@@ -9,13 +9,13 @@ const Input = (props) => {
           type="text"
           placeholder="Search for a book"
           name="search" 
-          value=""
-          onChange=""
+          value={props.search}
+          onChange={props.handleInputChange}
           id="inputEl" />
           <button 
           className="btn btn-dark right"
           id="searchbtn"
-          onClick="">
+          onClick={props.handleFormSubmit}>
             Search
             </button>
         </form>
