@@ -34,7 +34,6 @@ class Saved extends Component {
               authors={book.author}
               description={book.description}
               thumbnail={book.thumbnail}
-              button={false}
               onClick={this.deleteBook}
             />
           ))}
