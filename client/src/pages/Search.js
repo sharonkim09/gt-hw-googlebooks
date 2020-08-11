@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Input from "../components/Input/Input";
-
 import ResultsBook from "../components/ResultsBook/ResultsBook";
+import API from "../utils/API";
 class Search extends Component {
   state = {
     search: "",
@@ -17,8 +17,20 @@ class Search extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("Clicked button");
+    this.getBooks();
   };
-
+  getBooks = () => {
+    API.getGoogleBooks(this.state.search)
+      .then((res) => {
+        console.log(res.data.items);
+        this.setState({
+          books: res.data.items,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
     return (
       <>
@@ -26,7 +38,19 @@ class Search extends Component {
           search={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}/>
-        <ResultsBook />
+          {this.state.books.map((book, i) => {
+          return (
+            <ResultsBook
+              key={book.id}
+              thumbnail={book.volumeInfo.imageLinks.smallThumbnail}
+              title={book.volumeInfo.title}
+              description={book.volumeInfo.description}
+              author={book.volumeInfo.authors}
+              link={book.volumeInfo.infoLink}
+              saveBook={this.saveBook}
+            />
+          );
+        })}
       </>
     );
   }
