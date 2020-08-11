@@ -1,1 +1,8 @@
-#body{background-color:green;}
+#body {
+  background-image: url("https://cdn.theatlantic.com/static/mt/assets/science/Book%20search.jpg");
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Baloo Tamma 2", cursive;
+}

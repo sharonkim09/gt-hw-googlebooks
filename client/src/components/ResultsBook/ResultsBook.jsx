@@ -24,8 +24,8 @@ const ResultsBook = (props) => {
             >
               <i className="fa fa-heart-o" aria-hidden="true"></i>
             </button>
-            <h2>{props.title}</h2>
-            <h3>{props.author}</h3>
+            <h3>{props.title}</h3>
+            <h5>Written by: {props.author}</h5>
             <div className="card-image">
               <img
                 alt="book"

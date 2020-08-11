@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Input from "../components/Input/Input";
 import API from "../utils/API";
 import ResultsBook from "../components/ResultsBook/ResultsBook";
+
 class Search extends Component {
   state = {
     search: "",
@@ -41,7 +42,7 @@ class Search extends Component {
       thumbnail: thumbnail,
       link: link
     })
-      .then(res => console.log("book saved to database"))
+      .then(this.setState({message:alert("This book has been saved!")}))
       .catch(err => console.log(err));
   };
 
