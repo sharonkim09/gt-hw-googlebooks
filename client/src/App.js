@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import "./App.css";
+import Footer from "./components/Footer/Footer"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={Search} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/saved" component={Saved} />
+      <Footer />
       </Router>
     </div>
   );
