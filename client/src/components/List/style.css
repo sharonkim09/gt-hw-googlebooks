@@ -1,0 +1,14 @@
+#savedBooksContainer {
+  margin-top: 60px;
+}
+#deleteBtn {
+  margin-right: 10px;
+  background-color: red;
+}
+#bookImg {
+  float: left;
+  margin-right: 20px;
+}
+#viewBtn {
+  background-color: #959596;
+}
