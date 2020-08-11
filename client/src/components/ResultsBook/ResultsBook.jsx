@@ -31,6 +31,7 @@ const ResultsBook = (props) => {
                 alt="book"
                 className="card.img"
                 src={props.thumbnail}
+                style={{ width: "200px" }}
                 id="bookImg"
               />
             </div>
