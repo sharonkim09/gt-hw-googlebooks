@@ -30,7 +30,7 @@ app.get("/api/config", (req, res) => {
 
 // db connection
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/gt-hw-googlebooks", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

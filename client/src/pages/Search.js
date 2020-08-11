@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Input from "../components/Input/Input";
-import ResultsBook from "../components/ResultsBook/ResultsBook";
 import API from "../utils/API";
+import ResultsBook from "../components/ResultsBook/ResultsBook";
 class Search extends Component {
   state = {
     search: "",
     books: [],
   };
+
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -31,14 +32,28 @@ class Search extends Component {
         console.log(err);
       });
   };
+  saveBook = (title, author, description, thumbnail, link) => {
+    //event.preventDefault();
+    API.saveBook({
+      title: title,
+      author: author,
+      description: description,
+      thumbnail: thumbnail,
+      link: link
+    })
+      .then(res => console.log("book saved to database"))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <>
-        <Input 
+        <Input
           search={this.state.search}
           handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleFormSubmit}/>
-          {this.state.books.map((book, i) => {
+          handleFormSubmit={this.handleFormSubmit}
+        />
+        {this.state.books.map((book, i) => {
           return (
             <ResultsBook
               key={book.id}
