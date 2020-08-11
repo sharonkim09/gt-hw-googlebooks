@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const BookSchema = new Schema({
   title: {
     type: String,
-    // required: "Title is required",
   },
   author: {
     type: [String],

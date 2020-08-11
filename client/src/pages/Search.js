@@ -8,7 +8,7 @@ class Search extends Component {
     search: "",
     books: [],
   };
-
+  // allows input value to change and setting state
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -16,11 +16,13 @@ class Search extends Component {
       [name]: value,
     });
   };
+  // when user submits form, will run function to retrieve books
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("Clicked button");
     this.getBooks();
   };
+  // function to retrieve related books found in google api
   getBooks = () => {
     API.getGoogleBooks(this.state.search)
       .then((res) => {
@@ -33,6 +35,7 @@ class Search extends Component {
         console.log(err);
       });
   };
+  // save book info and alert user book has been saved
   saveBook = (title, author, description, thumbnail, link) => {
     //event.preventDefault();
     API.saveBook({
@@ -40,14 +43,15 @@ class Search extends Component {
       author: author,
       description: description,
       thumbnail: thumbnail,
-      link: link
+      link: link,
     })
-      .then(this.setState({message:alert("This book has been saved!")}))
-      .catch(err => console.log(err));
+      .then(this.setState({ message: alert("This book has been saved!") }))
+      .catch((err) => console.log(err));
   };
 
   render() {
     return (
+      // rendering input form and books component
       <>
         <Input
           search={this.state.search}

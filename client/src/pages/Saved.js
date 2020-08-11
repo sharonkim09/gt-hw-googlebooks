@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import SaveBooks from "../components/List/SaveBooks"
+import SaveBooks from "../components/List/SaveBooks";
 class Saved extends Component {
   state = {
     books: [],
   };
-
+  // like document.ready() will run after window is ready
   componentDidMount() {
     this.loadBooks();
   }
-
+// retrieve saved book data
   loadBooks = () => {
     API.getBooks()
       .then((res) => this.setState({ books: res.data }))
       .catch((err) => console.log(err));
   };
-  deleteBook=id=>{
+  // delete book by their id
+  deleteBook = (id) => {
     API.deleteBook(id)
-    .then(res=>this.loadBooks())
-    .catch(err=>console.log(err))
-  }
-
+      .then((res) => this.loadBooks())
+      .catch((err) => console.log(err));
+  };
+// rendering all books saved
   render() {
     return (
       <>
